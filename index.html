@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="page">
+    <header class="hero">
+        <h1>Policy-Driven Approval Agent</h1>
+    </header>
+    <section class="section">
+        <div class="section-heading">
+            <div>
+                <h2>Business Rules</h2>
+            </div>
+            <button
+                id="manageRulesButton"
+                class="secondary-button"
+                type="button"
+            >
+                Manage Rules
+            </button>
+        </div>
+        <div
+            id="rulesContainer"
+            class="rules-grid"
+        ></div>
+        <div
+            id="ruleManager"
+            class="manager hidden"
+        >
+            <div class="manager-actions">
+                <button
+                    id="addRuleButton"
+                    class="primary-button"
+                    type="button"
+                >
+                    Add Rule
+                </button>
+                <button
+                    id="editRuleButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Edit Selected
+                </button>
+                <button
+                    id="deleteRuleButton"
+                    class="danger-button"
+                    type="button"
+                >
+                    Delete Selected
+                </button>
+            </div>
+            <p
+                id="managerMessage"
+                class="manager-message"
+            >
+                Select a rule to edit or delete it.
+            </p>
+            <form
+                id="ruleForm"
+                class="rule-form hidden"
+            >
+                <div class="form-field">
+                    <label for="ruleId">
+                        Rule ID
+                    </label>
+                    <input
+                        id="ruleId"
+                        type="text"
+                        placeholder="R6"
+                        required
+                    >
+                </div>
+                <div class="form-field wide">
+                    <label for="ruleText">
+                        Business Rule
+                    </label>
+                    <input
+                        id="ruleText"
+                        type="text"
+                        placeholder="Auto-approve expenses up to $700 for Sales"
+                        required
+                    >
+                    <small>
+                        Example:
+                        Auto-approve expenses under $300 for Marketing
+                    </small>
+                </div>
+                <div class="form-field">
+                    <label for="ruleDecision">
+                        Decision
+                    </label>
+                    <select id="ruleDecision">
+                        <option value="APPROVE">
+                            APPROVE
+                        </option>
+                        <option value="REJECT">
+                            REJECT
+                        </option>
+                        <option value="ESCALATE">
+                            ESCALATE
+                        </option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="ruleType">
+                        Rule Type
+                    </label>
+                    <select id="ruleType">
+                        <option value="POLICY">
+                            Policy
+                        </option>
+                        <option value="FALLBACK">
+                            Fallback
+                        </option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="rulePriority">
+                        Priority
+                    </label>
+                    <input
+                        id="rulePriority"
+                        type="number"
+                        min="1"
+                        value="10"
+                        required
+                    >
+                    <small>
+                        Lower number means higher priority.
+                    </small>
+                </div>
+                <div class="form-actions">
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Save Rule
+                    </button>
+                    <button
+                        type="button"
+                        id="cancelRuleButton"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="section">
+        <div class="results-heading">
+            <div>
+                <div class="section-label">
+                    RESULTS
+                </div>
+                <h2>
+                    Evaluation Results
+                </h2>
+            </div>
+            <div class="evaluate-area">
+                <button
+                    id="evaluateButton"
+                    class="evaluate-button"
+                    type="button"
+                >
+                    Evaluate Claims
+                </button>
+            </div>
+        </div>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <span>
+                    Total Claims
+                </span>
+                <strong id="totalCount">
+                    0
+                </strong>
+            </div>
+            <div class="summary-card">
+                <span>
+                    Approved
+                </span>
+                <strong id="approvedCount">
+                    0
+                </strong>
+            </div>
+            <div class="summary-card">
+                <span>
+                    Rejected
+                </span>
+                <strong id="rejectedCount">
+                    0
+                </strong>
+            </div>
+            <div class="summary-card">
+                <span>
+                    Escalated
+                </span>
+                <strong id="escalatedCount">
+                    0
+                </strong>
+            </div>
+        </div>
+        <div
+            id="resultsEmpty"
+            class="empty-state">
+            Click <strong>Evaluate Claims</strong>
+            to run the configured policies.
+        </div>
+        <div
+            id="resultsTableWrapper"
+            class="table-wrapper hidden"
+        >
+            <table>
+                <thead>
+                    <tr>
+                        <th>CLAIM</th>
+                        <th>NAME</th>
+                        <th>DEPARTMENT</th>
+                        <th>AMOUNT</th>
+                        <th>DECISION</th>
+                        <th>MATCHED RULE</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody"></tbody>
+            </table>
+        </div>
+    </section>
+    <section class="section">
+        <div class="section-label">
+            TRACEABILITY
+        </div>
+        <div class="trace-header">
+            <h2>
+                Decision Trace
+            </h2>
+            <span id="traceHint">
+                Select a claim after evaluation
+            </span>
+        </div>
+        <div
+            id="traceContainer"
+            class="trace-container"
+        >
+            <div class="empty-state">
+                Evaluate the claims and select a row
+                to see the decision path.
+            </div>
+        </div>
+    </section>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>

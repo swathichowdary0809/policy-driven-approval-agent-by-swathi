@@ -1,0 +1,46 @@
+{
+  "rules": [
+    {
+      "id": "R1",
+      "priority": 1,
+      "rule": "Auto-approve expenses up to $800 for Sales",
+      "decision": "APPROVE",
+      "type": "POLICY"
+    },
+    {
+      "id": "R2",
+      "priority": 2,
+      "rule": "Auto-approve expenses under $300 for Marketing",
+      "decision": "APPROVE",
+      "type": "POLICY"
+    },
+    {
+      "id": "R3",
+      "priority": 3,
+      "rule": "Reject claims above $2,000 for any department",
+      "decision": "REJECT",
+      "type": "POLICY"
+    },
+    {
+      "id": "R4",
+      "priority": 4,
+      "rule": "Escalate expenses between $500.01 and $2,000 for any department",
+      "decision": "ESCALATE",
+      "type": "POLICY"
+    },
+    {
+      "id": "R5",
+      "priority": 99,
+      "rule": "Escalate incomplete or unmatched expense claims",
+      "decision": "ESCALATE",
+      "type": "FALLBACK"
+    },
+    {
+      "id": "R6",
+      "priority": 10,
+      "rule": "Approve Operations expenses up to $700",
+      "decision": "APPROVE",
+      "type": "POLICY"
+    }
+  ]
+}

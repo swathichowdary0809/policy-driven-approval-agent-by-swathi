@@ -1,0 +1,109 @@
+{
+  "claims": [
+    {
+      "id": "EXP_IN_001",
+      "employee": "Niharika",
+      "department": "Finance",
+      "amount": 4500,
+      "description": "Annual auditing platform subscription"
+    },
+    {
+      "id": "EXP_IN_002",
+      "employee": "Rohan",
+      "department": "Sales",
+      "amount": 250,
+      "description": "Client lunch"
+    },
+    {
+      "id": "EXP_IN_003",
+      "employee": "Teja",
+      "department": "Engineering",
+      "amount": 1200,
+      "description": "Cloud hosting expansion"
+    },
+    {
+      "id": "EXP_IN_004",
+      "employee": "Vikram",
+      "department": "Engineering",
+      "amount": 2500,
+      "description": "High-end developer monitor"
+    },
+    {
+      "id": "EXP_IN_005",
+      "employee": "Swathi",
+      "department": "Marketing",
+      "amount": 150,
+      "description": "Social media promo ads"
+    },
+    {
+      "id": "EXP_IN_006",
+      "employee": "Siri",
+      "department": "Human Resources",
+      "amount": 200,
+      "description": "Recruitment portal job post"
+    },
+    {
+      "id": "EXP_IN_007",
+      "employee": "Arjun",
+      "department": "Marketing",
+      "amount": 2000.01,
+      "description": "Billboard placement deposit"
+    },
+    {
+      "id": "EXP_IN_008",
+      "employee": "Sandeep",
+      "department": "Sales",
+      "amount": 500,
+      "description": "Sales presentation materials"
+    },
+    {
+      "id": "EXP_IN_009",
+      "employee": "Pooja",
+      "department": "Marketing",
+      "amount": 450,
+      "description": "Press release agency distribution"
+    },
+    {
+      "id": "EXP_IN_010",
+      "employee": "Sindhu",
+      "department": "Human Resources",
+      "amount": 6000,
+      "description": "Company-wide wellness event"
+    },
+    {
+      "id": "EXP_IN_011",
+      "employee": "Krishna",
+      "department": "Marketing",
+      "amount": 299.99,
+      "description": "Printing campaign flyers"
+    },
+    {
+      "id": "EXP_IN_012",
+      "employee": "Jahnavi",
+      "department": "Sales",
+      "amount": 750,
+      "description": "Regional team workshop"
+    },
+    {
+      "id": "EXP_IN_013",
+      "employee": "Dhruv",
+      "department": "Sales",
+      "amount": 3200,
+      "description": "International client conference travel"
+    },
+    {
+      "id": "EXP_IN_014",
+      "employee": "Meera ",
+      "department": "Operations",
+      "amount": null,
+      "description": "Office supplies replacement"
+    },
+    {
+      "id": "EXP_IN_015",
+      "employee": "Indu",
+      "department": "Finance",
+      "amount": 1999,
+      "description": "Tax compliance consultation"
+    }
+  ]
+}
